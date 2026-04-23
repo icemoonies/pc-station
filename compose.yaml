@@ -1,6 +1,12 @@
-
 services:
   db:
     image: mysql
     restart: always
     env_file: .env.db
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_db:/var/lib/mysql
+
+volumes:
+  mysql_db:
